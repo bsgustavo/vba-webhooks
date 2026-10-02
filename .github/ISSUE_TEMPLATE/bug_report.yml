@@ -1,0 +1,40 @@
+name: Relatar um bug
+description: Algo não funciona como deveria
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por relatar. **Nunca cole a URL do webhook** (ela é a credencial do fluxo) e oculte e-mails e caminhos que você não quer mostrar.
+  - type: textarea
+    id: o-que-aconteceu
+    attributes:
+      label: O que aconteceu?
+      description: O que você fez, o que esperava e o que aconteceu no lugar.
+    validations:
+      required: true
+  - type: textarea
+    id: barra-de-status
+    attributes:
+      label: Barra de status e TestarAlertaTeams
+      description: O texto da barra de status do Excel depois da alteração e a mensagem da macro TestarAlertaTeams.
+      render: text
+  - type: dropdown
+    id: modo
+    attributes:
+      label: Quando enviar
+      options:
+        - Ao salvar
+        - A cada alteração
+  - type: input
+    id: excel
+    attributes:
+      label: Versão e idioma do Excel
+      placeholder: ex. Microsoft 365 2409 (64 bits), pt-BR
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Versão do Windows
+      placeholder: ex. Windows 11 24H2
