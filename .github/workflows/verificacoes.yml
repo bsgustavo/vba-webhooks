@@ -1,0 +1,20 @@
+name: verificacoes
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  arquivos:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Codificacao do .bas e segredos
+        shell: pwsh
+        run: ./tests/Verificar-Arquivos.ps1
