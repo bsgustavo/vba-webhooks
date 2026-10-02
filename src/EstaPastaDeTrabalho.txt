@@ -1,0 +1,12 @@
+﻿' Cole no módulo EstaPastaDeTrabalho (Alt+F11, duplo clique em
+' "EstaPastaDeTrabalho" - ou "ThisWorkbook" no Excel em inglês - no Projeto
+' VBA). Se a pasta já tiver algum destes eventos, só acrescente a linha
+' AlertaTeams.* dentro do que já existe.
+
+Private Sub Workbook_SheetChange(ByVal Sh As Object, ByVal Target As Range)
+    AlertaTeams.RegistrarAlteracao Sh, Target
+End Sub
+
+Private Sub Workbook_AfterSave(ByVal Success As Boolean)
+    If Success Then AlertaTeams.EnviarPendentes
+End Sub
