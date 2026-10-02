@@ -1,0 +1,10 @@
+# Pastas de trabalho ficam fora do repositório: uma pasta configurada guarda a
+# URL do webhook, que é um segredo. O exemplo é gerado por scripts\Gerar-Exemplo.ps1.
+*.xlsm
+*.xlsx
+*.xlsb
+~$*
+
+# saída do gerador e dos testes
+dist/
+tests/tmp/

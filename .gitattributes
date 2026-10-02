@@ -1,0 +1,7 @@
+* text=auto
+*.ps1 text eol=crlf
+*.txt text eol=crlf
+
+# O .bas vai byte a byte (Windows-1252 + CRLF), sem normalização de fim de linha:
+# com LF, o editor do VBA não reconhece a linha Attribute VB_Name na importação.
+*.bas -text diff linguist-language=VBA
